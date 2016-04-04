@@ -11,7 +11,7 @@ class Autore
     private $vivente;  
     
     
-    function __construct($id, $nome, $cognome, $data_nascita, $luogo_nascita, $vivente) 
+    function __construct($id=0, $nome=0, $cognome=0, $data_nascita=0, $luogo_nascita=0, $vivente=0) 
     {
         $this->id = $id;
         $this->nome = $nome;
@@ -68,9 +68,29 @@ class Autore
     function setVivente($vivente) {
         $this->vivente = $vivente;
     }
-
+    
+    
+    public function __get($property) {
+       if(property_exists($this,$property))
+            return $this->$property;
+    }
+       
+    public function __set($property,$value){
+        if(property_exists($this,$property))                
+                $this->$property=$value;
+    }
+    
     public function __toString() 
     {
+        return "Id: ".$this->id
+                ."Id padre: ".$this->id_padre
+                .", Nome: ".$this->nome
+                .", Cognome: ".$this->cognome
+                .", Data di nascita: ".$this->data_nascita
+                .", Luogo di nascita: ".$this->luogo_nascita
+                .", Vivente: ".$this->vivente                 
+                ;
+                
         
     }
 
