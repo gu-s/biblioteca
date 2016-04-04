@@ -37,7 +37,13 @@ class Editore
         $this->citta = $citta;
     }
 
-    public function __toString() {
+    public function __toString() 
+    {
+        return "Id: ".$this->id                
+                .", Nome: ".$this->nome                
+                .", Città: ".$this->citta                 
+                ;
+                
         
     }
 
