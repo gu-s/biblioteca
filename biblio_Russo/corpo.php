@@ -1,11 +1,17 @@
+
 <?php
 include './autentication.inc';
 include './config.php';
-include './classes/libri.php';
-
+include './classes/Autore.php';
+include './classes/AutoreDal.php';
+include './classes/DataManager.php';
+include './classes/Editore.php';
+include './classes/Libri.php';
 
 ?>
 
+<h1>Benvenuto nella biblioteca online</h1>
+<div background="./css/biblioteca.jpg"
 <form action="index.php?=" method="post">
     <div class="form-horizontal">
     ordina per:
@@ -24,7 +30,9 @@ include './classes/libri.php';
                 
                 $libro=new libri();
                 echo $libro->stampa_elenco();
-                
-                    
-            ?>
-   
+                $autore = new AutoreDal();
+                echo $autore->stampa_elenco();
+                   ?>
+</div> 
+          
+

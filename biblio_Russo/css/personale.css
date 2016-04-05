@@ -1,0 +1,34 @@
+body
+{	
+  background: url(../img/biblio.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/biblioteca.jpg', sizingMethod='scale');
+ -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/biblioteca.jpg', sizingMethod='scale')";
+  width:100%;
+ height:100%;
+ position:fixed;
+ top:0px; left:0px;
+ z-index:-100;
+
+}
+	
+footer 
+{
+	position: absolute;
+	bottom: 0;
+	background-color:black;
+	height:0 auto;
+	min-height:80px;
+}
+
+fieldset {
+    color: blue;
+    border-color:#080808;
+    margin:0 auto;
+    width: 300px;
+    height: auto;
+}
+

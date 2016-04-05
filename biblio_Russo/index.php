@@ -13,8 +13,9 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
+    
     <!-- Custom CSS -->
+    <link href="css/personale.css" rel="stylesheet">
     <style>
     body {
         padding-top: 70px;
@@ -32,6 +33,8 @@
 </head>
 
 <body>
+    <div class="row">
+    <div class="col-lg-12 text-center">
 
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -60,18 +63,15 @@
 
         <div class="row">
             <div class="col-lg-12 text-center">
-
-            <?php include 'content.php' ?>
-            <?php include 'posts.php' ?>
+            
+            <?php include 'corpo.php' ?>
+           
             
             </div>
         </div>
         <!-- /.row -->
         
-        <footer class="row" id="footer">
-            <?php include 'footer.php' ?>
-
-        </footer>
+        <?php include './footer.php' ?>
     </div>
     <!-- /.container -->
 
@@ -80,7 +80,9 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-
+  </div>
+ </div>
 </body>
+
 
 </html>

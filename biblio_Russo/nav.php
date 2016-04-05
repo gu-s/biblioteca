@@ -1,14 +1,14 @@
 <ul class="nav navbar-nav">
     <li>
-        <a href="index.jsp">Home</a> 
+        <a href="index.php">Home</a> 
     </li>
     <li>
-        <a href="libri.jsp">Categorie</a> 
+        <a href="index.php">Libri</a> 
     </li>
     <li>
-        <a href="Login.php">Area riservata</a> 
+        <a href="login.php">Area riservata</a> 
     </li>
     <li>
-        <a href="logout.jsp">Logout</a> 
+        <a href="logout.php">Logout</a> 
     </li>
 </ul>
