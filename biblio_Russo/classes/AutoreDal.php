@@ -1,5 +1,4 @@
 <?php
-
 class AutoreDal 
 {
     
@@ -14,7 +13,7 @@ class AutoreDal
     
     public function get_last_position($id=0)
     {
-        $sql="Select max(posizione) as posizione from autore where id=$id";
+        $sql="Select max(posizione) as posizione from autori where id=$id";
         return mysql_query($sql);
     }
     
@@ -22,7 +21,7 @@ class AutoreDal
     public function add($id=0, $nome=0, $cognome=0, $data_nascita=0, $luogo_nascita=0, $vivente=0)
             {
         $this->get_last_position()+1;
-        $sql="Insert into autore(id, nome, cognome, data_nascita, luogo_nascita, vivente)"
+        $sql="Insert into autori(id, nome, cognome, data_nascita, luogo_nascita, vivente)"
                 ." values('$id','$nome','$cognome','$data_nascita', $luogo_nascita,$vivente";
        
         return mysql_query($sql);        
@@ -32,7 +31,7 @@ class AutoreDal
     //aggiorna autore
     public function update($id=0, $nome=0, $cognome=0, $data_nascita=0, $luogo_nascita=0, $vivente=0)
             {
-        $sql="Update autore set id='$id', nome = '$nome', cognome = '$cognome', data_nascita = '$data_nascita', luogo_nascita = $luogo_nascita, vivente = $vivente
+        $sql="Update autori set id='$id', nome = '$nome', cognome = '$cognome', data_di_nascita = '$data_nascita', luogo_di_nascita = $luogo_nascita, vivente = $vivente
                 .where id = $id"
                 ;       
         return mysql_query($sql);
@@ -42,7 +41,7 @@ class AutoreDal
         public function delete($id)
             {
                 {            
-            $sql= "Delete from autore where id=$id";
+            $sql= "Delete from autori where id=$id";
             return mysql_query($sql);
                 }  
                     
@@ -50,7 +49,7 @@ class AutoreDal
             
         public function getAll(){
         
-        $sql="Select * from autore";
+        $sql="Select * from autori";
         $rs=  mysql_query($sql);
         
         $lista = Array();
@@ -58,7 +57,7 @@ class AutoreDal
         while($row= mysql_fetch_array($rs))
         {
            $lista[]=new Autore($row['id'],$row['nome'],
-                   $row['cognome'],$row['data_nascita'],$row['luogo_nascita'],$row['vivente']);
+                   $row['cognome'],$row['data_di_nascita'],$row['luogo_di_nascita'],$row['vivente']);
         }
         
         return $lista;

@@ -22,7 +22,7 @@ class EditoreDal
     public function add($id=0, $nome=0, $citta=0)
             {
         $this->get_last_position()+1;
-        $sql="Insert into editore(id, nome, citta)"
+        $sql="Insert into editori(id, nome, citta)"
                 ." values('$id','$nome','$citta')";
        
         return mysql_query($sql);        
@@ -32,7 +32,7 @@ class EditoreDal
     //aggiorna editore
     public function update($id=0, $nome=0, $citta=0)
             {
-        $sql="Update editore set id='$id', nome = '$nome', citta = '$citta'
+        $sql="Update editori set id='$id', nome = '$nome', citta = '$citta'
                 .where id = $id"
                 ;       
         return mysql_query($sql);
@@ -42,7 +42,7 @@ class EditoreDal
         public function delete($id)
             {
                 {            
-            $sql= "Delete from editore where id=$id";
+            $sql= "Delete from editori where id=$id";
             return mysql_query($sql);
                 }  
                     
@@ -50,14 +50,14 @@ class EditoreDal
             
         public function getAll(){
         
-        $sql="Select * from editore";
+        $sql="Select * from editori";
         $rs=  mysql_query($sql);
         
         $lista = Array();
         
         while($row= mysql_fetch_array($rs))
         {
-           $lista[]=new Autore($row['id'],$row['nome'],
+           $lista[]=new Editore($row['id'],$row['nome'],
                    $row['citta']);
         }
         
@@ -72,7 +72,7 @@ class EditoreDal
                     $msg = "Nessun elemento trovato";
         else{
         $msg ="<table border='1'>";
-        $msg .= "<tr><th>Id</th><th>Nome</th><th>Città</th></tr>";
+        $msg .= "<tr><td>Id</td><td>Nome</td><td>Città</td></tr>";
         
         foreach($this->getAll() as $value){
             $msg .= "<tr>";
@@ -87,4 +87,3 @@ class EditoreDal
             
     }
 }
-

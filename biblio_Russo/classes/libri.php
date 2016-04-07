@@ -118,6 +118,7 @@ class libri {
         
     }
     public function stampa_elenco(){
+        
          $msg="<table border=1>";
          $msg .="<tr><th>Codice Isbn</th>"
                  . "<th>Autore</th>"
