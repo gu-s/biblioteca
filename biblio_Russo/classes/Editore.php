@@ -1,5 +1,4 @@
 <?php
-
 class Editore 
 {
     
@@ -16,28 +15,23 @@ class Editore
     function getId() {
         return $this->id;
     }
-
     function getNome() {
         return $this->nome;
     }
-
     function getCitta() {
         return $this->citta;
     }
-
     function setId($id) {
         $this->id = $id;
     }
-
     function setNome($nome) {
         $this->nome = $nome;
     }
-
     function setCitta($citta) {
         $this->citta = $citta;
     }
-    // Metodi Magici get e set
-     public function __get($property) {
+    //get e set
+    public function __get($property) {
        if(property_exists($this,$property))
             return $this->$property;
     }
@@ -46,24 +40,12 @@ class Editore
         if(property_exists($this,$property))                
                 $this->$property=$value;
     }
-
-    public function __toString() 
-    {
-        return "Id: ".$this->id                
-                .", Nome: ".$this->nome                
-                .", Città: ".$this->citta                 
-                ;
-                
+    
+    public function __toString() {
         
     }
-
-
     
-
-
     
     
     
 }
-
-
