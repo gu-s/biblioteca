@@ -1,28 +1,27 @@
-
 <?php
-include './autentication.inc';
-include './config.php';
-include './classes/Autore.php';
-include './classes/AutoreDal.php';
+include './classes/libri.php';
 include './classes/DataManager.php';
+include './classes/AutoreDal.php';
+include './classes/Autore.php';
 include './classes/Editore.php';
-include './classes/Libri.php';
+include './classes/EditoreDal.php';
+
+
+
 
 ?>
 
-<h1>Benvenuto nella biblioteca online</h1>
-<div background="./css/biblioteca.jpg"
 <form action="index.php?=" method="post">
-    <div class="form-horizontal">
+    <div id="ordina" class="form-horizontal">
     ordina per:
-    <input type="submit" name="btn-anno" value="anno di acquisto">
-    <input type="submit" name="btn-anno_decrescente" value="anno di acquisto decrescente">
+    <input type="button" name="btn-anno" value="anno di acquisto">
+    <input type="button" name="btn-anno_decrescente" value="anno di acquisto decrescente">
     </div> 
     
-    <div class="form-horizontal">
+    <div id="cerca" class="form-horizontal">
     Cerca per:
-    <input type="submit" name="btn-autore" value="autore">
-    <input type="submit" name="btn-editore" value="editore">
+    <input type="button" name="btn-autore" value="autore">
+    <input type="button" name="btn-editore" value="editore">
     </div>
 </form>
 <h2>Elenco Libri</h2>
@@ -30,9 +29,11 @@ include './classes/Libri.php';
                 
                 $libro=new libri();
                 echo $libro->stampa_elenco();
-                $autore = new AutoreDal();
+                $autore=new AutoreDal();
                 echo $autore->stampa_elenco();
-                   ?>
-</div> 
-          
-
+                $editore=new EditoreDal();
+                echo $editore->stampa_elenco();
+                
+                    
+            ?>
+   
